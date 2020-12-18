@@ -1,0 +1,131 @@
+<html>
+<head>
+  <title> Quiz Program</title>
+  <link rel ="stylesheet" href ="Final.css">
+  <center>
+  <script>
+    var score = 0;
+    var questionCount = 0;
+    var table = "RESULTS" +'<br>'
+    var ans1 = " "
+    var ans2 = " "
+    var ans3 = " "
+    var ans4 = " "
+    var ans5 = " "
+    function gradeQuiz()
+    {
+       if(questionCount == 0)
+        {
+           ans1 = document.getElementById("answer").value;
+          if(ans1 == "Dog")
+            {
+              score = score + 1;
+            }
+        document.getElementById('pic').innerHTML = "<img src = 'Cat.jpg' height= '300px'  width= '400px'>";
+        }
+
+       if(questionCount == 1)
+        {
+            ans2 = document.getElementById("answer").value;
+          if(ans2 == "Cat")
+           {
+             score = score + 1;
+               table = table +'Answer'+"Cat" + 'Your'+ ans2 + '<br>'
+
+           }
+        document.getElementById('pic').innerHTML = "<img src = 'Goat.jpg' height= '300px'  width= '400px'>";
+
+       }
+
+       if(questionCount == 2)
+        {
+            ans3 = document.getElementById("answer").value;
+          if(ans3 == "Goat")
+           {
+             score = score + 1;
+               table = table +'Answer'+"Goat" + 'Your'+ ans3 + '<br>'
+           }
+               document.getElementById('pic').innerHTML = "<img src = 'Bat.jpg' height= '300px'  width= '400px'>";
+        }
+
+           if(questionCount == 3)
+            {
+                ans4 = document.getElementById("answer").value;
+              if(ans4 == "Bat")
+               {
+                 score = score + 1;
+                   table = table +'Answer'+"Bat" + 'Your'+ ans4 + '<br>'
+
+               }
+             document.getElementById('pic').innerHTML = "<img src = 'Fish.jpg' height= '300px'  width= '400px'>";
+
+           }
+
+           if(questionCount == 4)
+            {
+                ans5 = document.getElementById("answer").value;
+              if(ans5 == "Fish")
+               {
+                 score = score + 1;
+                   table = table +'Answer'+"Fish" + 'Your'+ ans5 + '<br>'
+
+               }
+               document.getElementById('reset').style.visibility = 'visible';
+               end();
+
+           }
+
+      questionCount = questionCount + 1;
+    }
+
+  function end()
+  {
+        table = table + "YOU GOT " + score + "<br>";
+        table = table + " Answer was Dog " +'Your Answer ' + ans1 + '<br>'
+        table = table + " Answer was Cat " + 'Your Answer '+ ans2 + '<br>'
+        table = table + " Answer was Goat " +'Your Answer '+ ans3 + '<br>'
+        table = table + " Answer was Bat " + 'Your Answer '+ ans4 + '<br>'
+        table = table + " Answer was Fish " +' Your Answer '+ ans5 + '<br>'
+      document.getElementById("question").style.visibility = "hidden";
+      document.getElementById("answer").style.visibility = "hidden";
+      document.getElementById("Submit_Answer").style.visibility = "hidden";
+
+      document.getElementById("final").style.visibility = "visible"
+
+
+      document.getElementById("final").innerHTML = table;
+
+
+
+  }
+  function reset()
+  {
+      document.getElementById("final").innerHTML = "";
+    table= ""
+    score = 0
+    questionCount = 0;
+    document.getElementById('pic').innerHTML = "<img src = 'Dog.jpg' height= '300px'  width= '400px'>";
+    document.getElementById('reset').style.visibility = 'hidden';
+    document.getElementById("question").style.visibility = "visible";
+    document.getElementById("answer").style.visibility = "visible";
+    document.getElementById("Submit_Answer").style.visibility = "visible";
+
+  }
+
+    </script>
+  </head>
+
+  <body>
+    <h2 id= "title">Guess That Picture Game!</h2>
+    <span id= "question"> What is that Animal </span>
+    <input type = "text" id = "answer">
+    <input type = "button" id = "Submit_Answer" value = 'Enter'onclick = "gradeQuiz()">
+    <br>
+    <input type = "button" id = "reset" value = 'Play Again' onclick = "reset()">
+
+
+   <span id = "final"></span>
+   <span id ='pic'><img src = 'Dog.jpg' height= '300px'  width= '400px'></span>
+  </body>
+  </center>
+  </html>
