@@ -1,0 +1,26 @@
+body{
+  margin:0px;
+  background-color:blue ;
+}
+#title{
+  font-size: 40px;
+  color: black;
+  text-decoration: underline;
+}
+
+#pic {
+   height= '300px'
+   width= '400px'>";
+}
+#Submit_Answer{
+  color: red;
+}
+#Submit_Answer:hover {
+  color: yellow
+}
+#question
+{
+  font-size: 20px;
+  color: yellow;
+  text-decoration: bold;
+}
